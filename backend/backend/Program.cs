@@ -1,4 +1,6 @@
 using backend.Data;
+using backend.Data.Repository;
+using backend.MappingProfiles;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +13,11 @@ builder.Services.AddEndpointsApiExplorer();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-
+//Mapping 
+builder.Services.AddAutoMapper(typeof(UserProfile));
+//-------
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

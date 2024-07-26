@@ -1,12 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace backend.Data.Entity
+namespace backend.Data.DTOs
 {
-    public class User
-    {   
-        
-        [Key]
-        public int Id { get; set; }
+    public class UserInsertionDto
+    {
 
         [MaxLength(100)]
         [Required]
@@ -17,7 +14,7 @@ namespace backend.Data.Entity
         public string Email { get; set; }
 
         [Required]
-        [MinLength(6, ErrorMessage = "Şifre Uzunluğu 6 karakterden az olamaz"), MaxLength(25, ErrorMessage = "Şifre uzunluğu 25 karakterden fazla olamaz") ]
+        [MinLength(6, ErrorMessage = "Şifre Uzunluğu 6 karakterden az olamaz"), MaxLength(25, ErrorMessage = "Şifre uzunluğu 25 karakterden fazla olamaz")]
         public string Password { get; set; }
 
         [Required]
@@ -27,11 +24,5 @@ namespace backend.Data.Entity
         [Required]
         [MaxLength(11)]
         public string PhoneNumber { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-        public DateTime LastUpdatedAt { get; set; }
-
-
-
     }
 }

@@ -24,9 +24,11 @@ namespace backend.Data
                 new Cardinality { Id = 3, Value = "Redundant" });
 
 
-            modelBuilder.Entity<Ticket>().HasOne(x => x.cardinality)
-                .WithMany(y => y.Tickets )
-                .HasForeignKey(z => z.CardinalityId);
+            modelBuilder.Entity<Ticket>()
+                .HasOne(x => x.cardinality)
+                .WithMany()
+                .HasForeignKey(z => z.Id)
+                .IsRequired(); ;
         }
     }
 }
