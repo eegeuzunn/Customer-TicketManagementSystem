@@ -67,10 +67,8 @@ namespace backend.Controllers
 
                 return NotFound("There is no user with " + Id);
             }
-            else
-            {
-                return Ok(new { Message = $"1 User deleted!", user });
-            }
+
+            return Ok(new { Message = $"1 User deleted!", user });
         }
 
         [HttpPut("user/{id}")]

@@ -19,9 +19,13 @@ namespace backend.Data.Entity
         [Required]
         public string AuthorFullName { get; set; }
 
-        
-        public int CardinalityId { get; set; }
+        public DateTime createdAt { get; set; }
 
+
+
+        public int CardinalityId { get; set; }
         public Cardinality cardinality {  get; set; }
+
+        
     }
 }
