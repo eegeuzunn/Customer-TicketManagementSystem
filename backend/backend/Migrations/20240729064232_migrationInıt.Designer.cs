@@ -12,8 +12,8 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240724102508_ticketCardinalityAdd")]
-    partial class ticketCardinalityAdd
+    [Migration("20240729064232_migrationInıt")]
+    partial class migrationInıt
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,9 @@ namespace backend.Migrations
                     b.Property<int>("CardinalityId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(1000)
@@ -81,8 +84,8 @@ namespace backend.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(1)
-                        .HasColumnType("nvarchar(1)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -132,23 +135,18 @@ namespace backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("backend.Data.Entity.Ticket", b =>
                 {
                     b.HasOne("backend.Data.Entity.Cardinality", "cardinality")
-                        .WithMany("Tickets")
+                        .WithMany()
                         .HasForeignKey("CardinalityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("cardinality");
-                });
-
-            modelBuilder.Entity("backend.Data.Entity.Cardinality", b =>
-                {
-                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

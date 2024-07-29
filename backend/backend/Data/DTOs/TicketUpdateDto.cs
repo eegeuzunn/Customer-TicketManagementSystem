@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using backend.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
-namespace backend.Data.Entity
+namespace backend.Data.DTOs
 {
-    public class Ticket
+    public class TicketUpdateDto
     {
-        [Key]   
-        public int Id { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 1, ErrorMessage = "Başlık 1-50 karakter arasında değil")]
@@ -19,13 +18,7 @@ namespace backend.Data.Entity
         [Required]
         public string AuthorFullName { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-
-
-
         public int CardinalityId { get; set; }
-        public Cardinality cardinality {  get; set; }
 
-        
     }
 }

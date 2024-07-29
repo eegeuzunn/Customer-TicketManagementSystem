@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using backend.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
-namespace backend.Data.Entity
+namespace backend.Data.DTOs
 {
-    public class Ticket
+    public class TicketDto
     {
-        [Key]   
         public int Id { get; set; }
 
         [Required]
@@ -21,11 +21,7 @@ namespace backend.Data.Entity
 
         public DateTime CreatedAt { get; set; }
 
-
-
         public int CardinalityId { get; set; }
-        public Cardinality cardinality {  get; set; }
-
-        
+        public string CardinalityName { get; set; }
     }
 }

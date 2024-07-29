@@ -2,7 +2,6 @@
 using backend.Data.DTOs;
 using backend.Data.Entity;
 using backend.Data.Repository;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
@@ -20,7 +19,7 @@ namespace backend.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet("user")]
+        [HttpGet("users")]
         public IActionResult GetAll()
         {
             
@@ -28,7 +27,7 @@ namespace backend.Controllers
 
             var usersDto = mapper.Map<List<UserDto>>(users);
 
-            return Ok(users);
+            return Ok(new { Message = "Request Complete", usersDto });
         }
 
         [HttpPost("user")]
@@ -82,6 +81,7 @@ namespace backend.Controllers
             var userDto = mapper.Map<UserDto>(updatedUser);
 
             return Ok(new { Message = "User updated succesfully", userDto });
+            
         }
     }
 }

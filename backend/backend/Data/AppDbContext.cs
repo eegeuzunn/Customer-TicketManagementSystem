@@ -11,7 +11,7 @@ namespace backend.Data
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
-        public virtual DbSet<User> Cardinality { get; set; }
+        public virtual DbSet<Cardinality> Cardinality { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -21,13 +21,14 @@ namespace backend.Data
             modelBuilder.Entity<Cardinality>().HasData(
                 new Cardinality { Id = 1, Value = "Important" },
                 new Cardinality { Id = 2, Value = "Care" },
-                new Cardinality { Id = 3, Value = "Redundant" });
+                new Cardinality { Id = 3, Value = "Redundant" },
+                new Cardinality { Id = 4, Value = "Done" });
 
 
             modelBuilder.Entity<Ticket>()
                 .HasOne(x => x.cardinality)
                 .WithMany()
-                .HasForeignKey(z => z.Id)
+                .HasForeignKey(z => z.CardinalityId)
                 .IsRequired(); ;
         }
     }

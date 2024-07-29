@@ -78,8 +78,9 @@ namespace backend.Data.Repository
             dbUser.PhoneNumber = user.PhoneNumber;
             dbUser.Email = user.Email;
             dbUser.Password = user.Password;
-
             dbUser.LastUpdatedAt = DateTime.Now;
+
+            DbContext.SaveChanges ();
 
             return dbUser;
         }

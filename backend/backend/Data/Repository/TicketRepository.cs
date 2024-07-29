@@ -1,4 +1,5 @@
 ﻿using backend.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Data.Repository
 {
@@ -26,14 +27,26 @@ namespace backend.Data.Repository
             return ticket;
         }
 
-        public Ticket UpdateCardinality(int id, int cardinality)
+        public List<Ticket> GetAllTicket()
         {
-            var ticket = dbContext.Tickets.SingleOrDefault(t => t.Id == id);
-            if (ticket == null)
-                return null;
+            var ticketList = dbContext.Tickets.Include(t => t.cardinality).ToList();
 
-            ticket.CardinalityId = cardinality;
-            return ticket;
+            return ticketList;
+        }
+
+        public Ticket UpdateTicket(int id, Ticket ticket)
+        {
+            var dbTicket = dbContext.Tickets.SingleOrDefault(t => t.Id == id);
+            if (dbTicket == null)
+                return null;
+            
+            dbTicket.cardinality = ticket.cardinality;
+            dbTicket.CardinalityId = ticket.CardinalityId;
+            dbTicket.Title = ticket.Title;
+            dbTicket.Description = ticket.Description;
+            dbTicket.AuthorFullName = ticket.AuthorFullName;
+            dbContext.SaveChanges();
+            return dbTicket;
         }
     }
 }
