@@ -4,6 +4,7 @@
   width: 420px;
   border-radius: 20px;
   padding:50px;
+  background-color:rgb(20,20,20);
 }
 
 .input-box {
@@ -51,6 +52,11 @@
     border-style: solid;
     border-radius: 20px;
     border-width: 2px;
-    
+    cursor:pointer;
+}
+
+.submit-button:hover {
+  background-color: rgb(212, 206, 206);
+  border-color: rgb(212, 206, 206);
 }
 

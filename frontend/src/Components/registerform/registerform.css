@@ -5,6 +5,7 @@
     width: 420px;
     position: relative;
     padding: 35px;
+    background-color: rgb(20,20,20);
 }
 
 .text-box{
@@ -69,4 +70,10 @@ input::placeholder{
     height: 40px;
     margin: 7px ;
     font-weight: 700;
+    cursor:pointer;
+}
+
+.signup-buton:hover {
+    background-color: rgb(240, 240, 240);
+    border-color: rgb(240, 240, 240);
 }

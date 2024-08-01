@@ -1,8 +1,23 @@
-import React from 'react';
-import LoginForm from '../../Components/loginform/loginform';
+import "./LoginPage.css";
+import LoginForm from "../../Components/loginform/loginform";
+import { Link } from "react-router-dom";
 
-export default function LoginPage () {
-    return(
-        <LoginForm />        
-    );
+export default function LoginPage() {
+  return (
+    <div>
+      <div className="navigation">
+        <Link to="/ticket" className="ticket">
+          Ticket form
+        </Link>
+        <Link to="/register" className="register">
+          Register
+        </Link>
+      </div>
+      <div className="formx-container">
+        <div className="log-form">
+          <LoginForm />
+        </div>
+      </div>
+    </div>
+  );
 }

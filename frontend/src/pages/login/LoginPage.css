@@ -1,0 +1,47 @@
+.formx-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.navigation{
+    position: relative;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.register{
+    background-color: blue;
+    justify-content: end;
+    margin-left: auto;
+    margin-right: 40px;
+    padding: 20px 30px;
+    border:0;
+    border-radius: 10px;
+    background-color: rgb(20,20,20);
+    color: white;
+    text-decoration: none;
+}
+
+.ticket{
+    color: white;
+    background-color: rgb(20,20,20);
+    border: 0;
+    border-radius: 10px ;
+    margin: 10px 40px;
+    padding:0px;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.ticket:hover{
+    background-color: white;
+    color: black;
+}
+
+.register:hover{
+    background-color: white;
+    color: black;
+}
