@@ -26,8 +26,8 @@ export default function RegisterForm(){
                 <FaPhoneAlt className="text-icon"/>   
             </div>
             <div className="text-box">
-                <input type="password" placeholder="Password" />
-                <FaLock className="text-icon" />
+                <input type="password" placeholder="Password" className="ps-text"/>
+                <FaLock className="text-icon" id="lock-icon"/>
             </div>
             <button type="submit" className="signup-buton">SIGN UP</button>
             </form>

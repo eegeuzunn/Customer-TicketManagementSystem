@@ -2,9 +2,9 @@
 .form-container {
     border: 2px solid white;
     border-radius: 20px;
-    width: 420px;
+    width: 500px;
     position: relative;
-    padding: 35px;
+    padding: 50px;
     background-color: rgb(20,20,20);
 }
 
@@ -49,6 +49,7 @@
     box-sizing: border-box;
     background-color: black;
     padding: 0px 10px;
+    font-family: "Poppins";
 }
 
 .text-icon {
@@ -59,6 +60,14 @@
 
 input::placeholder{
     color: white;
+}
+
+.ps-text{
+    margin:10px 0px
+}
+
+#lock-icon{
+    top: 20px;
 }
 
 .signup-buton {

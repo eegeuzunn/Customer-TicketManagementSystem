@@ -1,0 +1,79 @@
+.form-c{
+    width: 500px;
+    border:2px solid white;
+    border-radius: 40px;
+    background-color: rgb(20,20,20);
+    padding: 40px;
+}
+
+.form-c form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-c input{
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: black;
+    padding: 10px 20px;
+    font-family: "Poppins";
+}
+
+.name-phone-container input{
+    box-sizing: border-box;
+    margin:10px;
+    width: 45%;
+}
+
+.title-container{
+    
+}
+
+.title-container input{
+    box-sizing: border-box;
+    width: 470px;
+    margin: 10px
+}
+
+.description-container textarea{
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: black;
+    padding: 10px 20px;
+    width: 470px;
+    margin:10px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+    
+}
+
+.form-c form button {
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+textarea {
+    font-family: "Poppins";
+}
+
+textarea::placeholder {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 500;
+}
+
+.form-c form button:hover {
+    background-color: rgb(240, 240, 240);
+    border-color: rgb(240, 240, 240);
+}
