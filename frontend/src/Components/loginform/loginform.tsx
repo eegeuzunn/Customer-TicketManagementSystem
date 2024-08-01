@@ -7,11 +7,11 @@ export default function loginform(){
         <div className="formContainer">
             <form>
                 <div className="input-box">
-                    <input type="text" placeholder="email"/>
+                    <input type="text" placeholder="Email"/>
                     <IoIosMail className="icon"/>
                 </div>
                 <div className="input-box">
-                    <input type="password" placeholder="password"/>
+                    <input type="password" placeholder="Password"/>
                     <FaLock className="icon"/>
                 </div>
                 
