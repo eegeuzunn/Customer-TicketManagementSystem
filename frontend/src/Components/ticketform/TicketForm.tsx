@@ -1,25 +1,71 @@
-import { Form } from 'react-router-dom';
-import './TicketForm.css';
+import { Form } from "react-router-dom";
+import "./TicketForm.css";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { email } from "../../types/global.types";
+import { baseUrl } from "../constants/global.constants";
 
-export default function TickerForm(){
-    return(
-        <div className='form-c'>
-            <Form>
+export default function TicketForm() {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<email>();
+
+    const onSubmit: SubmitHandler<email> = (data) => {
+        fetch(baseUrl.concat("/api/ticket"), {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => {
+                if (response.ok) {
+                    alert("Ticket sent successfully");
+                } else {
+                    alert("Ticket not sent");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+            console.log(data);
+    };
+
+    return (
+        <div className="form-c">
+            <Form onSubmit={handleSubmit(onSubmit)}>
                 <div className="name-phone-container">
-                    <input type="text" placeholder='Full Name'/>
-                    <input type="text" placeholder='Phone Number'/>
+                    <input
+                        {...register("authorFullName", { required: true, minLength: 5 })}
+                        type="text"
+                        placeholder="Full Name"
+                        className={errors.authorFullName ? "error" : ""}
+                    />
+                    <input
+                        {...register("phoneNumber", { required: true })}
+                        type="text"
+                        placeholder="Phone Number"
+                        className={errors.phoneNumber ? "error" : ""}
+                    />
                 </div>
-                <div className='title-container'>
-                    <input type="text" placeholder='Title'/>
+                <div className="title-container">
+                    <input
+                        {...register("title", { required: true })}
+                        type="text"
+                        placeholder="Title"
+                        className={errors.title ? "error" : ""}
+                    />
                 </div>
-                <div className='description-container'>
-                <textarea
-                        name="postContent"
+                <div className="description-container">
+                    <textarea
+                        {...register("description", { required: true })}
                         placeholder="Description"
-                        maxLength={335}/>
+                        maxLength={335}
+                        className={errors.description ? "error" : ""}
+                    />
                 </div>
-                <button type='submit'>SEND</button>
-                
+                <button type="submit">SEND</button>
             </Form>
         </div>
     );
