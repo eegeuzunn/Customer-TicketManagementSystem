@@ -17,6 +17,8 @@ namespace backend.Data.DTOs
 
         [Required]
         public string AuthorFullName { get; set; }
+
+        public string PhoneNumber { get; set; }
         public int CardinalityId { get; set; }
       
     }

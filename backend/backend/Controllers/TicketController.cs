@@ -39,6 +39,7 @@ namespace backend.Controllers
         [HttpPost("ticket")]
         public IActionResult TicketPost(TicketInsertionDto ticketInsertionDto)
         {
+            
             var ticket = mapper.Map<Ticket>(ticketInsertionDto);
             ticket.CreatedAt = DateTime.Now;
             var returnedTicket = ticketRepository.SaveTicket(ticket);

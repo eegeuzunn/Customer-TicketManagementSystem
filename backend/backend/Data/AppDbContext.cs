@@ -19,17 +19,22 @@ namespace backend.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Cardinality>().HasData(
-                new Cardinality { Id = 1, Value = "Important" },
+                new Cardinality { Id = 1, Value = "Critical" },
                 new Cardinality { Id = 2, Value = "Care" },
-                new Cardinality { Id = 3, Value = "Redundant" },
-                new Cardinality { Id = 4, Value = "Done" });
+                new Cardinality { Id = 3, Value = "Non-essential" },
+                new Cardinality { Id = 4, Value = "Resolved" },
+                new Cardinality { Id = 5, Value = "Undecided"});
 
 
             modelBuilder.Entity<Ticket>()
                 .HasOne(x => x.cardinality)
                 .WithMany()
                 .HasForeignKey(z => z.CardinalityId)
-                .IsRequired(); ;
+                .IsRequired();
+
+            modelBuilder.Entity<Ticket>().
+                Property(x => x.CardinalityId)
+                .HasDefaultValue(5);
         }
     }
 }

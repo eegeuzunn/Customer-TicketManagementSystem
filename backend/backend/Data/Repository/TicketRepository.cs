@@ -14,7 +14,9 @@ namespace backend.Data.Repository
         public Ticket DeleteTicket(int id)
         {
             var ticket = dbContext.Tickets.SingleOrDefault(t => t.Id == id);
-
+            if (ticket == null) {
+                return null;
+            }
             dbContext.Tickets.Remove(ticket);
             dbContext.SaveChanges();
             return ticket;
@@ -45,6 +47,7 @@ namespace backend.Data.Repository
             dbTicket.Title = ticket.Title;
             dbTicket.Description = ticket.Description;
             dbTicket.AuthorFullName = ticket.AuthorFullName;
+            dbTicket.PhoneNumber = ticket.PhoneNumber;
             dbContext.SaveChanges();
             return dbTicket;
         }

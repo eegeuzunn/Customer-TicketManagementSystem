@@ -21,6 +21,8 @@ namespace backend.Data.DTOs
 
         public DateTime CreatedAt { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         public int CardinalityId { get; set; }
         public string CardinalityName { get; set; }
     }

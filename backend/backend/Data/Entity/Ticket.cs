@@ -21,9 +21,11 @@ namespace backend.Data.Entity
 
         public DateTime CreatedAt { get; set; }
 
+        public string PhoneNumber { get; set; }
 
 
-        public int CardinalityId { get; set; }
+
+        public int CardinalityId { get; set; } = 5;
         public Cardinality cardinality {  get; set; }
 
         
