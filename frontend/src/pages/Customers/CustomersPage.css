@@ -1,0 +1,14 @@
+.page-container {
+    display: flex;
+}
+
+.page-content {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-right: 20px;
+    background-color: rgb(73, 73, 83);
+    width: 100%;
+ }

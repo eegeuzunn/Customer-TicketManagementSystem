@@ -4,8 +4,9 @@ import LoginPage from "./pages/login/LoginPage";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import RegisterPage from './pages/register/RegisterPage';
-import CustomerPage from './pages/CustomersPage';
+import CustomersPage from './pages/Customers/CustomersPage';
 import TicketPage from './pages/ticket/TicketPage';
+import TicketsPage from './pages/Tickets/TicketsPage';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -17,12 +18,17 @@ const router = createBrowserRouter([{
 },
 {
   path: '/customers',
-  element:<CustomerPage />
+  element:<CustomersPage />
 },
 {
   path: '/ticket',
   element: <TicketPage />
-}
+},
+{
+  path: '/tickets',
+  element: <TicketsPage />
+},
+
 
 ]);
 

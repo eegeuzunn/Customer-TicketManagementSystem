@@ -4,7 +4,7 @@ import { FaLock } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import {registerType} from '../../types/global.types';
 import { SubmitHandler, useForm } from "react-hook-form";
-import { baseUrl } from "../constants/global.constants";
+import { baseUrl } from "../../constants/global.constants";
 
 import './registerform.css';
 

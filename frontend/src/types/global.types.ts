@@ -12,3 +12,11 @@ export type registerType = {
     password: string;
     phoneNumber: string
 }
+
+export type customerType = {
+
+    customerId: number,
+    customerFullName: string,
+    phoneNumber: string,
+    address: string,
+}

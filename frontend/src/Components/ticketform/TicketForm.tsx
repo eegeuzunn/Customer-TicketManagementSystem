@@ -2,7 +2,7 @@ import { Form } from "react-router-dom";
 import "./TicketForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { email } from "../../types/global.types";
-import { baseUrl } from "../constants/global.constants";
+import { baseUrl } from "../../constants/global.constants";
 import { kMaxLength } from "buffer";
 
 export default function TicketForm() {
