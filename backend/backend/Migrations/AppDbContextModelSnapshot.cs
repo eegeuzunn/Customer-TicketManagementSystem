@@ -66,6 +66,58 @@ namespace backend.Migrations
                         });
                 });
 
+            modelBuilder.Entity("backend.Data.Entity.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerFullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("backend.Data.Entity.CustomerComment", b =>
+                {
+                    b.Property<int>("CommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"));
+
+                    b.Property<string>("CommentText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CommentId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("backend.Data.Entity.Ticket", b =>
                 {
                     b.Property<int>("Id")
@@ -151,6 +203,25 @@ namespace backend.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("backend.Data.Entity.CustomerComment", b =>
+                {
+                    b.HasOne("backend.Data.Entity.Customer", "customer")
+                        .WithMany("Comments")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("backend.Data.Entity.User", "User")
+                        .WithMany("CustomerComment")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("customer");
+                });
+
             modelBuilder.Entity("backend.Data.Entity.Ticket", b =>
                 {
                     b.HasOne("backend.Data.Entity.Cardinality", "cardinality")
@@ -160,6 +231,16 @@ namespace backend.Migrations
                         .IsRequired();
 
                     b.Navigation("cardinality");
+                });
+
+            modelBuilder.Entity("backend.Data.Entity.Customer", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("backend.Data.Entity.User", b =>
+                {
+                    b.Navigation("CustomerComment");
                 });
 #pragma warning restore 612, 618
         }

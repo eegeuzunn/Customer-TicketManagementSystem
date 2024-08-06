@@ -13,6 +13,9 @@ namespace backend.Data
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<Cardinality> Cardinality { get; set; }
 
+        public virtual DbSet<Customer> Customers { get; set; }
+
+        public virtual DbSet<CustomerComment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +38,19 @@ namespace backend.Data
             modelBuilder.Entity<Ticket>().
                 Property(x => x.CardinalityId)
                 .HasDefaultValue(5);
+
+            modelBuilder.Entity<Customer>()
+                .HasMany(x => x.Comments)
+                .WithOne(y => y.customer)
+                .HasForeignKey(z => z.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CustomerComment>()
+                .HasOne(x => x.User)
+                .WithMany(y => y.CustomerComment)
+                .HasForeignKey(z => z.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

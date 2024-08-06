@@ -3,6 +3,7 @@ import "./TicketForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { email } from "../../types/global.types";
 import { baseUrl } from "../constants/global.constants";
+import { kMaxLength } from "buffer";
 
 export default function TicketForm() {
     const {
@@ -43,10 +44,11 @@ export default function TicketForm() {
                         className={errors.authorFullName ? "error" : ""}
                     />
                     <input
-                        {...register("phoneNumber", { required: true })}
+                        {...register("phoneNumber", { required: true, validate: (val) => val.startsWith("0") })}
                         type="text"
                         placeholder="Phone Number"
-                        className={errors.phoneNumber ? "error" : ""}
+                        className={errors.phoneNumber ? "error" : ""} 
+                        maxLength={11}
                     />
                 </div>
                 <div className="title-container">

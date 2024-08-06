@@ -15,8 +15,8 @@ namespace backend.Controllers
     public class TicketController : Controller
     {
 
-        ITicketRepository ticketRepository;
-        IMapper mapper;
+        private readonly ITicketRepository ticketRepository;
+        private readonly IMapper mapper;
 
 
         public TicketController(ITicketRepository ticketRepository, IMapper mapper)

@@ -22,8 +22,7 @@
 
 .text-box-name-surname .name,
 .text-box-name-surname .surname {
-    flex: 1;
-    
+    flex: 1; 
 }
 
 
@@ -89,4 +88,7 @@ input::placeholder{
 
 .error {
     background-color: red;
+    padding: 0px 10px;
+    
+    
 }

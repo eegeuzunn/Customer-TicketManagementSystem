@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace backend.Data.Entity
 {
@@ -31,7 +32,8 @@ namespace backend.Data.Entity
         public DateTime CreatedAt { get; set; }
         public DateTime LastUpdatedAt { get; set; }
 
-
+        [NotMapped]
+        public ICollection<CustomerComment> CustomerComment { get; set; }
 
     }
 }

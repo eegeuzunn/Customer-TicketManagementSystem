@@ -53,7 +53,7 @@ export default function RegisterForm(){
                 <FaPhoneAlt className="text-icon"/>   
             </div>
             <div className="text-box">
-                <input {...register("password")} type="password" placeholder="Password" className={errors.password ? "error" : "ps-text"}/>
+                <input {...register("password", {required: true})} type="password" placeholder="Password" className={errors.password ? "error" : "ps-text"}/>
                 <FaLock className="text-icon" id="lock-icon"/>
             </div>
             <button type="submit" className="signup-buton">SIGN UP</button>
