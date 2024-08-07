@@ -4,7 +4,7 @@
   width: 420px;
   border-radius: 20px;
   padding:50px;
-  background-color:rgb(20,20,20);
+  background-color:rgb(73, 73, 83);
 }
 
 .input-box {
@@ -55,10 +55,13 @@
     border-radius: 20px;
     border-width: 2px;
     cursor:pointer;
+
+    transition: all 0.3s;
 }
 
 .submit-button:hover {
-  background-color: rgb(240, 240, 240);
-    border-color: rgb(240, 240, 240);
+  background-color: rgb(106, 126, 252);
+    border-color: rgb(106, 126, 252);
+    color: white;
 }
 

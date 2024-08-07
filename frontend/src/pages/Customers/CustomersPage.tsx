@@ -32,7 +32,7 @@ export default function CustomerPage(){
 
                 {
                     customers.map((customer) => {
-                        return <CustomerBox key={customer.customerId} customerId={customer.customerId} customerFullName={customer.customerFullName} phoneNumber={customer.phoneNumber} address={customer.address} />
+                        return <CustomerBox {...customer} />
                     })
                 }
 

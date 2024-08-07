@@ -41,10 +41,10 @@ export default function RegisterForm(){
                 <IoIosMail className="text-icon"/>
             </div>
             <div className="text-box-name-surname">
-                    <div className="text-box name">
+                    <div className="text-box-name1">
                         <input {...register("name", { required: true})}type="text" placeholder="Name" className={errors.name ? "error" : ""}/>
                     </div>
-                    <div className="text-box surname">
+                    <div className="text-box-surname1">
                         <input {...register("surname", { required: true})} type="text" placeholder="Surname" className={ errors.surname ? "error" : "" } />
                     </div>
                 </div>

@@ -75,5 +75,5 @@ textarea::placeholder {
 }
 
 .error {
-    background-color: red !important;
+    background-color: rgb(255, 86, 86) !important;
 }

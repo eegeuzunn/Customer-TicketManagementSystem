@@ -34,8 +34,8 @@
 }
 
 .item:hover{
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: rgb(255, 86, 86);
+    color: black;
 }
 
 #quit-button{

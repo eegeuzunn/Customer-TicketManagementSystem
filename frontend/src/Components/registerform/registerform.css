@@ -1,11 +1,17 @@
 
 .form-container {
-    border: 2px solid white;
+    border: 2px solid rgb(237, 242, 246);
     border-radius: 20px;
     width: 500px;
     position: relative;
     padding: 50px;
-    background-color: rgb(20,20,20);
+    background-color: rgb(73, 73, 83);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
 }
 
 .text-box{
@@ -17,31 +23,31 @@
 
 .text-box-name-surname {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    margin: 10px 10px;
 }
 
-.text-box-name-surname .name,
-.text-box-name-surname .surname {
-    flex: 1; 
+.text-box-name1, .text-box-surname1 {
+    width: 48%;
 }
-
-
-
-
 .text-box-name-surname input{
     border-style: solid;
-    border-color:white;
-    color: white;
+    border-color:rgb(237, 242, 246);
+    color: rgb(237, 242, 246);
     border-radius: 20px;
     width: 100%;
     height: 40px;
     background-color: black;
+    padding: 0px 10px;
+
+    box-sizing: border-box;
 }
 
 .text-box input{
     border-style: solid;
-    border-color:white;
-    color:white;
+    border-color:rgb(237, 242, 246);
+    color:rgb(237, 242, 246);
     border-radius: 20px;
     width: 100%;
     height: 40px;
@@ -58,35 +64,31 @@
 }
 
 input::placeholder{
-    color: white;
-}
-
-.ps-text{
-    margin:10px 0px
-}
-
-#lock-icon{
-    top: 20px;
+    color: rgb(237, 242, 246);
 }
 
 .signup-buton {
     box-sizing: border-box;
-    background-color: white;
-    border: 2px solid white;
+    background-color: rgb(237, 242, 246);
+    border: 2px solid rgb(237, 242, 246);
     border-radius: 20px;
     width: 97%;
     height: 40px;
-    margin: 7px ;
+    margin: 10px 7px ;
     font-weight: 700;
     cursor:pointer;
+
+    transition: all 0.3s;
 }
 
 .signup-buton:hover {
-    background-color: rgb(240, 240, 240);
-    border-color: rgb(240, 240, 240);
+    background-color: rgb(106, 126, 252);
+    border-color: rgb(106, 126, 252);
 }
 
 .error {
-    background-color: red;
-    padding: 0px 10px;
+    background-color: rgb(255, 86, 86) !important;
 }
+
+
+
