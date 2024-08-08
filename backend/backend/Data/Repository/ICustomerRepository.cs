@@ -15,5 +15,7 @@ namespace backend.Data.Repository
         public CustomerComment PostAComment(CustomerComment comment);
 
         public CustomerComment DeleteAComment(int id);
+
+        public Customer DeleteACustomer(int id);
     }
 }

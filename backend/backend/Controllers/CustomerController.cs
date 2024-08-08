@@ -105,7 +105,7 @@ namespace backend.Controllers
 
             if (deleted == null)
             {
-                return NotFound("There is no comment with id: " +  commentId);
+                return NotFound("There is no comment with id: " + commentId);
             }
 
             return Ok(new { Message = "Ticket deleted succesfully.", Data = deleted });
@@ -113,6 +113,18 @@ namespace backend.Controllers
 
         }
 
+        [HttpDelete("customer/{id}")]
+        public IActionResult DeleteACustomerWithId(int id) { 
+            
+            var deletedCustomer = _customerRepository.DeleteACustomer(id);
+            
+            if(deletedCustomer == null)
+            {
+                return NotFound("Customer does not exist");
+            }
+
+            return StatusCode(200, new { Message = "Customer deleted succesfully", Data = deletedCustomer });
+        }
     
     }
 }

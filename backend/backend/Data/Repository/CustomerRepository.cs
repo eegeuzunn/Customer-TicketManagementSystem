@@ -63,5 +63,18 @@ namespace backend.Data.Repository
 
             return comment;
         }
+
+        public Customer DeleteACustomer(int id)
+        {
+            var customer = _dbcontext.Customers.FirstOrDefault(x => x.CustomerId == id);
+
+            if (customer == null)
+                return null;
+
+            _dbcontext.Customers.Remove(customer);
+            _dbcontext.SaveChanges();
+
+            return customer;
+        }
     }
 }

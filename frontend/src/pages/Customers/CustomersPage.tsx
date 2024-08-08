@@ -3,7 +3,8 @@ import CustomerBox from "../../Components/CustomerBox/CustomerBox";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import { customerType } from "../../types/global.types";
 import "./CustomersPage.css";
-import { baseUrl } from "../../constants/global.constants";
+import { backendUrl } from "../../constants/global.constants";
+import CustomerPostForm from "../../Components/CustomerPostForm/CustomerPostForm";
 
 export default function CustomerPage(){
 
@@ -11,7 +12,7 @@ export default function CustomerPage(){
 
     useEffect(() => {
 
-        fetch(baseUrl.concat("/api/customers"))
+        fetch(backendUrl.concat("/api/customers"))
             .then((response) => {
                 return response.json();
             })
@@ -27,49 +28,22 @@ export default function CustomerPage(){
     return(
     <div>
         <div className="page-container">
-            <Sidebar />
+            <div className="sidebar-page">
+                <Sidebar />
+            </div>
             <div className="page-content">
-
+                <div className="c-box">
                 {
                     customers.map((customer) => {
                         return <CustomerBox {...customer} />
                     })
                 }
-
-                {/*
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngörenasdasdasdsdsdsdsdsdsdsdsdsdsdsds"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                <CustomerBox customerId={2} customerFullName={"ege uzun"} phoneNumber={"05395611604"} address={"haznedar mah. posta cad. no36 daire 7 istanbul/Güngören"} />
-                */}
+                </div>
+                <div className="c-post-form">
+                <CustomerPostForm />
             </div>
+            </div>
+            
         </div>
     </div>);
 }

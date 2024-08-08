@@ -4,7 +4,7 @@ import { FaLock } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import {registerType} from '../../types/global.types';
 import { SubmitHandler, useForm } from "react-hook-form";
-import { baseUrl } from "../../constants/global.constants";
+import { backendUrl } from "../../constants/global.constants";
 
 import './registerform.css';
 
@@ -14,7 +14,7 @@ export default function RegisterForm(){
 
     const onSubmit: SubmitHandler<registerType> = (data) => {
         
-        fetch(baseUrl.concat("/api/user"), {
+        fetch(backendUrl.concat("/api/user"), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -15,7 +15,7 @@ export default function Sidebar() {
                     <Link to="/profile" className="item">Profile</Link>
                 </div>
                 <div className="sidebar-item" id="quit-button">
-                    <Link to="/" className="item">QUİT</Link>
+                    <Link to="/" className="item">QUIT</Link>
                 </div>
             </div>
     );

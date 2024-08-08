@@ -1,7 +1,7 @@
 .customer-box{
-    
+    position: relative;
     background-color: rgb(106, 126, 252);
-    width: 225px;
+    width: 250px;
     height: 125px;
     border:0px;
     border-radius: 10px;
@@ -9,9 +9,14 @@
     font-size:12px;
 
     margin: 20px ;
-
+    
     transition: background-color 0.3s, box-shadow 0.3s;
     
+}
+
+.customer-box Link{
+    text-decoration: none;
+    color: white;
 }
 
 .customer-box:hover{
@@ -56,4 +61,73 @@
     -webkit-line-clamp: 2; 
     -webkit-box-orient: vertical;
     white-space: normal; 
+}
+
+.delete-button {
+
+    position: absolute;
+    
+    top: 10px;
+    right: 10px;
+    text-align: center;
+
+    background-color: rgb(255, 86, 86);
+    border-radius: 4px;
+
+    width: 17px;
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+
+
+
+
+.confirmation-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.confirmation-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#yes-button{
+    width: 50px;
+    height: 25px;
+    background-color: rgb(255, 86, 86);
+    border:0px;
+    border-radius: 5px;
+
+    cursor:pointer;
+
+    transition: all 0.3s;
+}
+
+#yes-button:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+#no-button{
+    width: 50px;
+    cursor:pointer;
+    height: 25px;
+    background-color: rgb(49, 255, 94);
+    border:0px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#no-button:hover{
+    background-color: rgb(0, 197, 43);
 }

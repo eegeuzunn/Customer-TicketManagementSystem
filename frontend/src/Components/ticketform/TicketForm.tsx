@@ -2,7 +2,7 @@ import { Form } from "react-router-dom";
 import "./TicketForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { email } from "../../types/global.types";
-import { baseUrl } from "../../constants/global.constants";
+import { backendUrl } from "../../constants/global.constants";
 import { kMaxLength } from "buffer";
 
 export default function TicketForm() {
@@ -13,7 +13,7 @@ export default function TicketForm() {
     } = useForm<email>();
 
     const onSubmit: SubmitHandler<email> = (data) => {
-        fetch(baseUrl.concat("/api/ticket"), {
+        fetch(backendUrl.concat("/api/ticket"), {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

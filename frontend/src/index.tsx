@@ -28,6 +28,10 @@ const router = createBrowserRouter([{
   path: '/tickets',
   element: <TicketsPage />
 },
+{
+  path: '/customer/:customerId',
+  element: <TicketsPage />
+}
 
 
 ]);
