@@ -7,6 +7,7 @@ import RegisterPage from './pages/register/RegisterPage';
 import CustomersPage from './pages/Customers/CustomersPage';
 import TicketPage from './pages/ticket/TicketPage';
 import TicketsPage from './pages/Tickets/TicketsPage';
+import CustomerDetailPage from './pages/CustomerDetail/CustomerDetailPage';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -30,7 +31,7 @@ const router = createBrowserRouter([{
 },
 {
   path: '/customer/:customerId',
-  element: <TicketsPage />
+  element: <CustomerDetailPage />
 }
 
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function LoginPage() {
   return (
-    <div>
+    <div className="page-container">
       <div className="navigation">
         <Link to="/ticket" className="ticket">
           Ticket form

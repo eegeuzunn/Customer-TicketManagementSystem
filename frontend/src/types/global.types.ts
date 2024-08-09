@@ -20,3 +20,10 @@ export type customerType = {
     phoneNumber: string,
     address: string,
 }
+
+export type customerCommentType = {
+    customerId: number;
+    userId: number;
+    commentText: string;
+    commentId: number;
+}

@@ -1,7 +1,7 @@
-.container{
+.register-container{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-
+    background-color: rgb(223, 223, 223);
 }

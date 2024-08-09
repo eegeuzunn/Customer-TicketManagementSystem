@@ -27,7 +27,7 @@ export default function CustomerPage(){
 
     return(
     <div>
-        <div className="page-container">
+        <div className="page-container-customer">
             <div className="sidebar-page">
                 <Sidebar />
             </div>

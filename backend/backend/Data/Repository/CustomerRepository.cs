@@ -1,4 +1,5 @@
 ﻿using backend.Data.Entity;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Data.Repository
@@ -25,11 +26,11 @@ namespace backend.Data.Repository
             return customers;
         }
 
-        public Customer GetCustomerWithComments(int id)
+        public ICollection<CustomerComment> GetCustomerComments(int id)
         {
-            var customer = _dbcontext.Customers.Include( x => x.Comments).FirstOrDefault();
+            var customerComments = _dbcontext.Comments.Where(data => data.CustomerId == id).ToList();
 
-            return customer;
+            return customerComments;
         }
 
         public CustomerComment PostAComment(CustomerComment comment)
@@ -75,6 +76,24 @@ namespace backend.Data.Repository
             _dbcontext.SaveChanges();
 
             return customer;
+        }
+
+        public Customer EditACustomer(Customer customer, int id)
+        {
+            var customerThatId = _dbcontext.Customers.FirstOrDefault( x => x.CustomerId == id);
+
+            if(customerThatId == null)
+            {
+                return null;
+            }
+
+            customerThatId.PhoneNumber = customer.PhoneNumber;
+            customerThatId.CustomerFullName = customer.CustomerFullName;
+            customerThatId.Address = customer.Address;
+
+            _dbcontext.SaveChanges();
+
+            return customerThatId;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace backend.Data.Repository
         
         public Customer FindCustomerById(int id);
 
-        public Customer GetCustomerWithComments(int id);
+        public ICollection<CustomerComment> GetCustomerComments(int id);
 
         public Customer SaveACustomer(Customer customer);
 
@@ -17,5 +17,7 @@ namespace backend.Data.Repository
         public CustomerComment DeleteAComment(int id);
 
         public Customer DeleteACustomer(int id);
+
+        public Customer EditACustomer(Customer customer, int id);
     }
 }

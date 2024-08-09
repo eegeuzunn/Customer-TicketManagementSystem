@@ -4,7 +4,7 @@ import './RegisterPage.css';
 export default function RegisterPage(){
     return(
     <div>
-        <div className="container">
+        <div className="register-container">
             <RegisterForm />
         </div>
         

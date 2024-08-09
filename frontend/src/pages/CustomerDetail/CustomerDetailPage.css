@@ -1,0 +1,135 @@
+.customer-detail-container{
+    
+    display: flex;
+}
+
+.sidebar-cont {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.customer-detail-content {
+
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    
+
+    padding: 10px;
+    margin: 10px;
+
+    height: 200px;
+    width: 500px;
+
+    background-color: rgb(106, 126, 252) ;
+    
+    border: 0px;
+    border-radius: 10px;    
+
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.edit-button{
+    position:absolute;
+    right: 20px;
+    top: 10px;
+
+    display: flex;
+    background-color: rgb(49, 255, 94);
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height: 40px;
+
+    border: 0px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.edit-button:hover{
+    background-color: rgb(0, 197, 43);
+}
+
+.prev-button {
+    position:absolute;
+    right: 20px;
+    top: 10px;
+
+    display: flex;
+    background-color: rgb(49, 255, 94);
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height: 40px;
+
+    border: 0px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.prev-button:hover{
+    background-color: rgb(0, 197, 43);
+}
+
+.customer-detail-address{
+    margin: 10px;
+    overflow: hidden;
+}
+
+.customer-detail-id-phone {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 10px 0px;
+    margin: 0px 10px;
+    margin-bottom: 10px;
+}
+
+.customer-detail-name {
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.customer-edit-form {
+    
+    margin: 20px 20px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.customer-edit-form input{
+    font-family: poppins;
+    margin:10px 0px;
+
+    background-color: rgb(223, 223, 223);
+
+    border:0px;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+}
+
+.customer-edit-form button {
+    font-family: poppins;
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: rgb(49, 255, 94);
+
+    cursor: pointer;
+}
+
+.customer-edit-form button:hover {
+    background-color: rgb(0, 197, 43);
+}

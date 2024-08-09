@@ -38,7 +38,7 @@ export default function RegisterForm(){
             <form>
             <div className="text-box">
                 <input {...register("email",{required: true, validate: (val) => val.includes("@")})}type="text" placeholder="Email" className={errors.email ? "error" : "" }/>
-                <IoIosMail className="text-icon"/>
+                <IoIosMail color="black" className="text-icon"/>
             </div>
             <div className="text-box-name-surname">
                     <div className="text-box-name1">
@@ -50,11 +50,11 @@ export default function RegisterForm(){
                 </div>
             <div className="text-box">
                 <input {...register("phoneNumber", { required: true, validate : (val) => val.startsWith("0")})} type="text" placeholder="Phone number" maxLength={11} className={ errors.phoneNumber ? "error" : ""}/>
-                <FaPhoneAlt className="text-icon"/>   
+                <FaPhoneAlt color="black" className="text-icon"/>   
             </div>
             <div className="text-box">
                 <input {...register("password", {required: true})} type="password" placeholder="Password" className={errors.password ? "error" : "ps-text"}/>
-                <FaLock className="text-icon" id="lock-icon"/>
+                <FaLock color="black" className="text-icon" id="lock-icon"/>
             </div>
             <button type="submit" className="signup-buton">SIGN UP</button>
             </form>

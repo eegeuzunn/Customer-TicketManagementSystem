@@ -48,7 +48,7 @@ namespace backend.Controllers
         public IActionResult GetByIdWithComments(int id)
         {
 
-            var customer = _customerRepository.GetCustomerWithComments(id);
+            var customer = _customerRepository.GetCustomerComments(id);
 
             if (customer == null)
             {
@@ -125,6 +125,17 @@ namespace backend.Controllers
 
             return StatusCode(200, new { Message = "Customer deleted succesfully", Data = deletedCustomer });
         }
-    
+
+        [HttpPut("customer/{id}")]
+        public IActionResult EditACustomer([FromBody] Customer customer, [FromRoute] int id)
+        {
+            var returnCustomer = _customerRepository.EditACustomer(customer, id);
+
+            if (returnCustomer == null)
+                return NotFound("Customer does not found with that id");
+
+            return Ok(returnCustomer);
+
+        }
     }
 }

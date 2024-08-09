@@ -1,18 +1,19 @@
-.page-container {
+.page-container-customer {
     display: flex;
+    background-color: black;
 }
 
 .sidebar-page{
     position: fixed;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 10px;
 }
 
 .page-content {
     display: flex;
     flex-direction: column;
-    margin-left: 220px;
-    margin-top:10px;
+    margin-left: 210px;
+    margin-top: 10px;
     margin-right: 20px;
  }
 
