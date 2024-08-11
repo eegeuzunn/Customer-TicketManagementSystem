@@ -1,6 +1,8 @@
 .customer-detail-container{
     
     display: flex;
+
+    
 }
 
 .sidebar-cont {
@@ -8,7 +10,15 @@
     margin-left: 10px;
 }
 
+.page-content-container {
+    background-color: rgb(73, 73, 83);
+    border: 0px;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+}
 .customer-detail-content {
+    
 
     position:relative;
     display: flex;
@@ -16,7 +26,7 @@
     
 
     padding: 10px;
-    margin: 10px;
+
 
     height: 200px;
     width: 500px;
@@ -132,4 +142,20 @@
 
 .customer-edit-form button:hover {
     background-color: rgb(0, 197, 43);
+}
+
+.page-content-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+
+    justify-content: flex-start;
+}
+
+.comment-container{
+    display: flex;
+    flex-direction: column;
+
+    
 }

@@ -29,7 +29,15 @@ form {
 }
 
 .text-box-name1, .text-box-surname1 {
+    
     width: 48%;
+}
+.text-box-name1 input, .text-box-surname1 input {
+    font-family: poppins;
+}
+
+.text-box-name1 input::placeholder, .text-box-surname1 input::placeholder {
+    font-family: poppins;
 }
 .text-box-name-surname input{
     border:0;

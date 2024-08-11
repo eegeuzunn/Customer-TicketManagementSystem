@@ -7,6 +7,7 @@ import './CustomerDetailPage.css';
 import { FaEdit } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { SubmitHandler, useForm } from "react-hook-form";
+import CommentBox from "../../Components/CommentBox/CommentBox";
 
 export default function CustomerDetailPage() {
     
@@ -86,8 +87,7 @@ export default function CustomerDetailPage() {
                 }
             })
             .then((data) => {
-                setCustomerData(data);
-                console.log(data);
+                setCustomerComment(data);
             })
             .catch((error) => {
                 console.log(error);
@@ -102,7 +102,7 @@ export default function CustomerDetailPage() {
             <div className="sidebar-cont">
                 <Sidebar />
             </div>
-            
+                <div className="page-content-container">
                 {!editButtonState && (
                 <div className="customer-detail-content">
                     <div className="edit-button" onClick={onEditButtonClick}><FaEdit color="black"/></div>
@@ -127,6 +127,16 @@ export default function CustomerDetailPage() {
                     </div>
                 )}
 
+                {
+                <div comment-container>
+                    
+                    {customerComment.map((comment) => (
+                        <CommentBox {...comment} />
+                    ))}
+                </div>
+                
+            }
+            </div>
         </div>
     );
 }

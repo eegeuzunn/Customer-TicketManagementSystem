@@ -26,4 +26,7 @@ export type customerCommentType = {
     userId: number;
     commentText: string;
     commentId: number;
+    user: {
+        name: string;
+    }
 }

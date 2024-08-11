@@ -98,7 +98,7 @@ namespace backend.Controllers
             return Ok(comment);
         }
 
-        [HttpDelete("comment")]
+        [HttpDelete("comment/{commentId}")]
         public IActionResult DeleteComment(int commentId)
         {
             var deleted = _customerRepository.DeleteAComment(commentId);

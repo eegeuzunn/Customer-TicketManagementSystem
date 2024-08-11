@@ -28,7 +28,8 @@ namespace backend.Data.Repository
 
         public ICollection<CustomerComment> GetCustomerComments(int id)
         {
-            var customerComments = _dbcontext.Comments.Where(data => data.CustomerId == id).ToList();
+            var customerComments = _dbcontext.Comments.Include(x => x.User).Where(data => data.CustomerId == id).ToList();
+
 
             return customerComments;
         }
