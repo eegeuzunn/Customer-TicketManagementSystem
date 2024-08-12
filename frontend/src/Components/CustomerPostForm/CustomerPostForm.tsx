@@ -32,7 +32,10 @@ export default function CustomerPostForm() {
                     <input {...register("customerFullName",{required:true})} type='text' placeholder='Full Name' className={errors.customerFullName ? "error" : ""}></input>
                 </div>
                 <div className="customer-email-form">
-                    <input {...register("phoneNumber",{required:true})} type='text' placeholder='Phone number' className={errors.phoneNumber ? "error" : ""}></input>
+                    <input {...register("phoneNumber",{
+                        required:true,
+                        pattern: /^[0-9]{11}$/
+                        })} type='text' placeholder='Phone number' className={errors.phoneNumber ? "error" : ""}></input>
                 </div>
                 <div className='customer-address-form'>
                     <input {...register("address", {required: true})} type='text' placeholder='Address' className={errors.address ? "error" : ""}></input>

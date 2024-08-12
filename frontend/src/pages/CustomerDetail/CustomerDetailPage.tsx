@@ -43,13 +43,13 @@ export default function CustomerDetailPage() {
     useEffect(() => {
         fetch(`${backendUrl}/api/customerComment/${customerId}`)
     .then((response) => {
-        if (response.ok){
             return response.json();
-        }
         })
     .then((data) =>{
+        if (Array.isArray(data)) {
         setCustomerComment(data);
         console.log(data);
+    }
         
     }).catch((error) => {
         console.log(error);
@@ -87,6 +87,7 @@ export default function CustomerDetailPage() {
                 }
             })
             .then((data) => {
+                
                 setCustomerComment(data);
             })
             .catch((error) => {
@@ -119,23 +120,21 @@ export default function CustomerDetailPage() {
                     <div className="customer-detail-content">
                         <div className="prev-button"  onClick={onPrevButtonClick}><IoMdArrowRoundBack color="black" /></div>
                         <form className="customer-edit-form" onSubmit={handleSubmit(onSubmit)}>
-                            <input {...register("customerFullName")} type="text" className="customer-edit-input-fullname" defaultValue={customerData.customerFullName} />
-                            <input {...register("phoneNumber")} type="text" className="customer-edit-input-phone" defaultValue={customerData.phoneNumber} />
-                            <input {...register("address")} type="text" className="customer-edit-input-address" defaultValue={customerData.address} />
+                            <input {...register("customerFullName", {required: true})} type="text" className="customer-edit-input-fullname" defaultValue={customerData.customerFullName} />
+                            <input {...register("phoneNumber", {required: true, pattern: /^[0-9]{11}$/})} type="text" className="customer-edit-input-phone" defaultValue={customerData.phoneNumber} />
+                            <input {...register("address", {required: true })} type="text" className="customer-edit-input-address" defaultValue={customerData.address} />
                             <button className="customer-edit-button">Save</button>
                         </form>
                     </div>
                 )}
-
+                <div className="comment-container">
                 {
-                <div comment-container>
-                    
-                    {customerComment.map((comment) => (
-                        <CommentBox {...comment} />
-                    ))}
-                </div>
+                    customerComment.map( (comment) => { 
+                        return <CommentBox {...comment} />
+                    })
                 
-            }
+                }
+                </div>
             </div>
         </div>
     );

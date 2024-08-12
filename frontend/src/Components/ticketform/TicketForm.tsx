@@ -44,7 +44,8 @@ export default function TicketForm() {
                         className={errors.authorFullName ? "error" : ""}
                     />
                     <input
-                        {...register("phoneNumber", { required: true, validate: (val) => val.startsWith("0") })}
+                        {...register("phoneNumber", { required: true, 
+                        pattern: /^[0-9]{11}$/ })}
                         type="text"
                         placeholder="Phone Number"
                         className={errors.phoneNumber ? "error" : ""} 

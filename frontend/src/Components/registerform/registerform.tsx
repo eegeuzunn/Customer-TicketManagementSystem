@@ -37,7 +37,10 @@ export default function RegisterForm(){
         <div className="form-container" onSubmit={handleSubmit(onSubmit)}>
             <form>
             <div className="text-box">
-                <input {...register("email",{required: true, validate: (val) => val.includes("@")})}type="text" placeholder="Email" className={errors.email ? "error" : "" }/>
+                <input {...register("email",
+                    {required: true,
+                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/})} 
+                    type="text" placeholder="Email" className={errors.email ? "error" : "" }/>
                 <IoIosMail color="black" className="text-icon"/>
             </div>
             <div className="text-box-name-surname">
@@ -49,11 +52,17 @@ export default function RegisterForm(){
                     </div>
                 </div>
             <div className="text-box">
-                <input {...register("phoneNumber", { required: true, validate : (val) => val.startsWith("0")})} type="text" placeholder="Phone number" maxLength={11} className={ errors.phoneNumber ? "error" : ""}/>
+                <input {...register("phoneNumber", { 
+                    required: true, 
+                    pattern: /^[0-9]{11}$/
+                    })} type="text" placeholder="Phone number" maxLength={11} className={ errors.phoneNumber ? "error" : ""}/>
                 <FaPhoneAlt color="black" className="text-icon"/>   
             </div>
             <div className="text-box">
-                <input {...register("password", {required: true})} type="password" placeholder="Password" className={errors.password ? "error" : "ps-text"}/>
+                <input {...register("password", {
+                    required: true,
+                    pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+                    })} type="password" placeholder="Password" className={errors.password ? "error" : "ps-text"}/>
                 <FaLock color="black" className="text-icon" id="lock-icon"/>
             </div>
             <button type="submit" className="signup-buton">SIGN UP</button>
