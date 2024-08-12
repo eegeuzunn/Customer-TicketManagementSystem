@@ -30,3 +30,15 @@ export type customerCommentType = {
         name: string;
     }
 }
+
+export type ticketType = {
+    
+    "id": number,
+    "title": string,
+    "description": string,
+    "authorFullName": string,
+    "createdAt": string,
+    "phoneNumber": string,
+    "cardinalityId": number,
+    "cardinalityName": string
+}

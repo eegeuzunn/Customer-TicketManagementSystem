@@ -1,0 +1,48 @@
+.tickets-container{
+    display: flex;
+    flex-direction: row;
+
+    margin: 10px;
+}
+
+.tickets-content-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(73, 73, 83);
+
+    margin: 0px 10px;
+    padding: 10px;
+
+    border:0px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.tickets-filter-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin: 10px;
+
+    background-color: rgb(237, 242, 246);
+    color: black;
+    width: 130px;
+    height: 40px;
+
+    border: none;
+    border-radius: 10px;
+
+    transition: all 0.3s;
+}
+
+.filter-button:hover {
+    background-color: rgb(0, 197, 43);
+}
