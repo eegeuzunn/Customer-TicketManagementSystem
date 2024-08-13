@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { backendUrl } from "../../constants/global.constants";
 import { customerCommentType, customerType } from "../../types/global.types";
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import Sidebar from "../../Components/sidebar/Sidebar";
 import './CustomerDetailPage.css';
 import { FaEdit } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { SubmitHandler, useForm } from "react-hook-form";
-import CommentBox from "../../Components/CommentBox/CommentBox";
+import CommentBox from "../../Components/commentBox/CommentBox";
 
 export default function CustomerDetailPage() {
     

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import CustomerBox from "../../Components/CustomerBox/CustomerBox";
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import CustomerBox from "../../Components/customerBox/CustomerBox";
+import Sidebar from "../../Components/sidebar/Sidebar";
 import { customerType } from "../../types/global.types";
 import "./CustomersPage.css";
 import { backendUrl } from "../../constants/global.constants";
-import CustomerPostForm from "../../Components/CustomerPostForm/CustomerPostForm";
+import CustomerPostForm from "../../Components/customerPostForm/CustomerPostForm";
 
 export default function CustomerPage(){
 

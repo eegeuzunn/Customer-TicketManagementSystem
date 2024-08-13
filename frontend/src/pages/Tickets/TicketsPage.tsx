@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import Sidebar from "../../Components/sidebar/Sidebar";
 import "./TicketsPage.css";
-import TicketBox from "../../Components/TicketBox/TicketBox";
+import TicketBox from "../../Components/ticketBox/TicketBox";
 import { backendUrl } from "../../constants/global.constants";
 import { ticketType } from "../../types/global.types";
 
