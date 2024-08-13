@@ -38,7 +38,7 @@ export default function TicketForm() {
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <div className="name-phone-container">
                     <input
-                        {...register("authorFullName", { required: true, minLength: 5 })}
+                        {...register("authorFullName", { required: true, minLength: 3 })}
                         type="text"
                         placeholder="Full Name"
                         className={errors.authorFullName ? "error" : ""}
