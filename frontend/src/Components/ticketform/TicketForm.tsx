@@ -1,7 +1,7 @@
 import { Form } from "react-router-dom";
 import "./TicketForm.css";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { email } from "../../types/global.types";
+import { ticketPostType } from "../../types/global.types";
 import { backendUrl } from "../../constants/global.constants";
 import { kMaxLength } from "buffer";
 
@@ -10,9 +10,9 @@ export default function TicketForm() {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<email>();
+    } = useForm<ticketPostType>();
 
-    const onSubmit: SubmitHandler<email> = (data) => {
+    const onSubmit: SubmitHandler<ticketPostType> = (data) => {
         fetch(backendUrl.concat("/api/ticket"), {
             method: "POST",
             headers: {

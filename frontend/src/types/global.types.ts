@@ -1,4 +1,4 @@
-export type email = {
+export type ticketPostType = {
     authorFullName: string;
     phoneNumber: string;
     title: string;
@@ -33,12 +33,17 @@ export type customerCommentType = {
 
 export type ticketType = {
     
-    "id": number,
-    "title": string,
-    "description": string,
-    "authorFullName": string,
-    "createdAt": string,
-    "phoneNumber": string,
-    "cardinalityId": number,
-    "cardinalityName": string
+    id: number,
+    title: string,
+    description: string,
+    authorFullName: string,
+    createdAt: string,
+    phoneNumber: string,
+    cardinalityId: number,
+    cardinalityName: string
+}
+
+export type userType = {
+    "email": string,
+    "password": string,
 }

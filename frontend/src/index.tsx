@@ -4,10 +4,10 @@ import LoginPage from "./pages/login/LoginPage";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import RegisterPage from './pages/register/RegisterPage';
-import CustomersPage from './pages/Customers/CustomersPage';
-import TicketPage from './pages/ticket/TicketPage';
-import TicketsPage from './pages/Tickets/TicketsPage';
-import CustomerDetailPage from './pages/CustomerDetail/CustomerDetailPage';
+import CustomersPage from './pages/customers/CustomersPage';
+import TicketPage from './pages/ticketform/TicketPage';
+import TicketsPage from './pages/tickets/TicketsPage';
+import CustomerDetailPage from './pages/customerDetail/CustomerDetailPage';
 
 const router = createBrowserRouter([{
   path: '/',

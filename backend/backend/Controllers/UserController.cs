@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
-    [Route("api/")]
+    [Route("api")]
     [ApiController]
     public class UserController : Controller
     {
-        
-        private IUserRepository userRepository;
-        private IMapper mapper;
+
+        private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
         public UserController(IUserRepository userRepository, IMapper mapper)
         {
             this.userRepository = userRepository;
@@ -22,17 +22,17 @@ namespace backend.Controllers
         [HttpGet("users")]
         public IActionResult GetAll()
         {
-            
+
             var users = userRepository.GetAll();
 
             var usersDto = mapper.Map<List<UserDto>>(users);
 
-            return Ok(new { Message = "Request Complete", usersDto });
+            return Ok(usersDto);
         }
 
         [HttpPost("user")]
         public IActionResult AddOne([FromBody] UserInsertionDto userInsertionDto) {
-            
+
             var user = mapper.Map<User>(userInsertionDto);
 
             user = userRepository.InsertSingle(user);
@@ -46,14 +46,14 @@ namespace backend.Controllers
         public IActionResult AddMultiple(List<UserInsertionDto> usersInsertionDto)
         {
             List<UserDto> usersDto = new();
-            foreach(var userInsertionDto in usersInsertionDto){
+            foreach (var userInsertionDto in usersInsertionDto) {
                 var user = mapper.Map<User>(userInsertionDto);
                 user = userRepository.InsertSingle(user);
                 var userDto = mapper.Map<UserDto>(user);
                 usersDto.Add(userDto);
             }
 
-            return Ok(usersDto);    
+            return Ok(usersDto);
         }
 
         [HttpDelete("user/{id}")]
@@ -81,7 +81,21 @@ namespace backend.Controllers
             var userDto = mapper.Map<UserDto>(updatedUser);
 
             return Ok(new { Message = "User updated succesfully", userDto });
-            
+
         }
+
+        [HttpGet("user/{email}")]
+        public IActionResult GetOneWithMail(string email)
+        {
+            var user = userRepository.FindByMail(email);
+
+            if (user == null) {
+
+                return NotFound("There is no user with this mail");
+            }
+
+            return Ok(user);
+        }
+
     }
 }

@@ -27,6 +27,11 @@ namespace backend.Data.Repository
             return deleteUser;
         }
 
+        public User FindByMail(String mail)
+        {
+            return DbContext.Users.FirstOrDefault(u => u.Email == mail);
+        }
+
         public  List<User> GetAll()
         {
 

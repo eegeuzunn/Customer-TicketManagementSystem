@@ -34,8 +34,8 @@ export default function RegisterForm(){
 
 
     return(
-        <div className="form-container" onSubmit={handleSubmit(onSubmit)}>
-            <form>
+        <div className="form-container" >
+            <form onSubmit={handleSubmit(onSubmit)}>
             <div className="text-box">
                 <input {...register("email",
                     {required: true,
