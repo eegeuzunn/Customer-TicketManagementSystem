@@ -19,5 +19,6 @@ namespace backend.Data.Repository
         public Customer DeleteACustomer(int id);
 
         public Customer EditACustomer(Customer customer, int id);
+
     }
 }
