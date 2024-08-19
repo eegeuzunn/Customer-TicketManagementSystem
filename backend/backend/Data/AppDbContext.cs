@@ -12,9 +12,7 @@ namespace backend.Data
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<Cardinality> Cardinality { get; set; }
-
         public virtual DbSet<Customer> Customers { get; set; }
-
         public virtual DbSet<CustomerComment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

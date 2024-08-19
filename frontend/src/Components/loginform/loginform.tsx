@@ -33,11 +33,11 @@ export default function Loginform(){
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-box">
                     <input {...register("email", {required:true})} type="text" placeholder="Email"/>
-                    <IoIosMail className="icon"/>
+                    <IoIosMail className="icon" color='black' />
                 </div>
                 <div className="input-box">
                     <input {...register("password", {required: true})} type="password" placeholder="Password" className={errors.password ? "error" : ""}/>
-                    <FaLock className="icon"/>
+                    <FaLock className="icon" color='black'/>
                 </div>
                 
                 <button type="submit" className="submit-button">SIGN IN</button>

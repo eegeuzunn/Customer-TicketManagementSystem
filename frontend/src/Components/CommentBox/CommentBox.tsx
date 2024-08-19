@@ -71,7 +71,7 @@ export default function CommentBox(props: customerCommentType) {
             )}
 
             {deleteState && (
-                <div className="delete-state">Customer has been deleted.</div>
+                <div className="delete-state">Comment has been deleted.</div>
             )}
         </div>
     );
